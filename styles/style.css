@@ -1,0 +1,43 @@
+/* General Settings */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: hsl(217, 100%, 97%);
+  --form-card-bg: hsl(0, 0%, 100%);
+  
+  --general-font: hsl(213, 96%, 18%);
+  --secondary-font: hsl(231, 11%, 63%);
+
+  --active-number-bg: hsl(206, 94%, 87%);
+  --active-number-font: #000;
+
+  --general-border-radius: 13px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--body-bg);
+}
+/*********************************************/
+/* The card */
+.form-card {
+  display: flex;
+
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+
+  height: 30rem;
+  width: 50rem;
+
+  background-color: var(--form-card-bg);
+  border-radius: var(--general-border-radius);
+}
+/*********************************************/

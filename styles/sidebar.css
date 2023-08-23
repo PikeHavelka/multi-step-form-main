@@ -1,0 +1,83 @@
+/* Left Side */
+.sidebar-steps {
+  color: var(--form-card-bg);
+
+  margin: .8rem;
+  padding: 2rem;
+
+  width: 13rem;
+
+  border-radius: var(--general-border-radius);
+
+  background: linear-gradient(300deg, rgba(0, 191, 255, 0.7), rgba(148, 0, 211, .8), hsla(213, 96%, 18%, .9));
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+
+.sidebar-steps .step1-your-info,
+.step2-select-plan,
+.step3-add-ons,
+.step4-summary {
+  display: flex;
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* numbers in circle */
+.sidebar-steps .number {
+  display: inline-block;
+
+  height: 1.8rem;
+  width: 1.8rem;
+
+  text-align: center;
+  line-height: 1.6rem;
+
+  border-radius: 50%;
+  border: 1px solid var(--body-bg);
+}
+
+/* text span */
+.sidebar-steps .text span:first-child {
+  display: block;
+
+  margin-bottom: .1rem;
+
+  color: var(--secondary-font);
+
+  font-weight: bold;
+  font-size: .6rem;
+}
+
+.sidebar-steps .text span:nth-child(2) {
+  display: block;
+
+  font-weight: bold;
+  font-size: .7rem;
+}
+
+/*********************************************/
+/* For JavaScript */
+.active {
+  background: var(--active-number-bg);
+  color: var(--active-number-font);
+}
+
+/*********************************************/
+/* Animations */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
