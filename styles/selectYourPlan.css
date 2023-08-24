@@ -1,0 +1,114 @@
+/* Right Side - Select Your Plan */
+.select-your-plan {
+  margin: 3rem auto;
+  width: 55%;
+}
+
+/* cards */
+.select-your-plan .plan-cards {
+  display: flex;
+  gap: 1rem;
+}
+
+.select-your-plan .card {
+  border: 1px solid var(--border-cards);
+  border-radius: 10px;
+
+  width: 100%;
+  padding: .8rem;
+}
+
+.select-your-plan .card svg {
+  margin-bottom: 2.5rem;
+}
+
+.select-your-plan .card span {
+  font-size: .8rem;
+  color: var(--secondary-font);
+}
+
+/* Checkbox */
+.monthly-yearly-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  padding: .5rem 0;
+  margin-top: 1.5rem;
+
+  border-radius: 5px;
+  background-color: hsl(217, 100%, 97%);
+}
+
+.monthly-yearly-bar input[type="checkbox"].toggle {
+  position: absolute;
+  top: -999999px;
+  left: -999999px;
+}
+
+.monthly-yearly-bar input[type="checkbox"].toggle + label {
+  position: relative;
+
+  width: 2rem;
+  height: 1rem;
+
+  background-color: var(--general-font);
+  border-radius: 15px;
+
+  cursor: pointer;
+}
+
+.monthly-yearly-bar input[type="checkbox"].toggle + label::after {
+  content: "";
+
+  position: absolute;
+  left: 1px;
+  top: 1px;
+
+  width: .85rem;
+  height: .85rem;
+
+  transition: 250ms ease-in-out;
+
+  border-radius: 50%;
+  background-color: white;
+}
+
+.monthly-yearly-bar input[type="checkbox"].toggle:checked + label::after {
+  transform: translateX(16px);
+}
+
+.monthly-bar,
+.yearly-bar {
+  cursor: pointer;
+}
+/*********************************************/
+
+/* btns */
+.select-your-plan .btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-your-plan .btns>* {
+  display: block;
+
+  cursor: pointer;
+
+  padding: .7rem 1rem;
+  margin-top: 3rem;
+
+  background-color: var(--general-font);
+  color: var(--form-card-bg);
+
+  outline: none;
+
+  border: none;
+  border-radius: 5px;
+}
+/*********************************************/
+
+/* JavaScript btns Go Back / Next Step */
+
+/*********************************************/

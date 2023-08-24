@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Multi step form | Training</title>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <!------------>
 
+  <!-- CSS -->
+  <!-- general-->
   <link rel="stylesheet" href="/styles/style.css">
+
+  <!-- left side-->
   <link rel="stylesheet" href="/styles/sidebar.css">
-  <link rel="stylesheet" href="/styles/rightSide.css">
 
-
+  <!-- right side -->
+  <link rel="stylesheet" href="/styles/personalInfo.css">
+  <link rel="stylesheet" href="/styles/selectYourPlan.css">
+  <!---------------->
 </head>
 <body>
   <div class="form-card">
@@ -148,17 +155,17 @@
       </div>
 
       <div class="monthly-yearly-bar">
-        <p>Monthly</p>
+        <p class="monthly-bar">Monthly</p>
 
         <input type="checkbox" id="checkbox" class="toggle">
         <label for="checkbox"></label>
 
-        <p>Yearly</p>
+        <p class="yearly-bar">Yearly</p>
       </div>
       
       <div class="btns">
-        <button class="submit-btn">Go Back</button>
-        <button class="submit-btn">Next Step</button>
+        <button class="submit-btn" id="btn-go-back">Go Back</button>
+        <button class="submit-btn" id="btn-go-next">Next Step</button>
       </div>
     </div>
   </div>

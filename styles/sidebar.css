@@ -14,7 +14,6 @@
   animation: gradient-animation 18s ease infinite;
 }
 
-
 .sidebar-steps .step1-your-info,
 .step2-select-plan,
 .step3-add-ons,
@@ -58,15 +57,15 @@
   font-weight: bold;
   font-size: .7rem;
 }
-
 /*********************************************/
+
 /* For JavaScript */
 .active {
   background: var(--active-number-bg);
   color: var(--active-number-font);
 }
-
 /*********************************************/
+
 /* Animations */
 @keyframes gradient-animation {
   0% {

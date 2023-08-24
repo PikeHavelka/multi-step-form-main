@@ -1,0 +1,87 @@
+/* Right Side - Personal Info */
+.personal-info {
+  margin: 3rem auto;
+  width: 55%;
+}
+
+/* header */
+.form-card .header {
+  margin-bottom: 2rem;
+}
+
+.form-card .header h1 {
+  margin-bottom: .5rem;
+  color: var(--general-font);
+}
+
+.form-card .header p {
+  font-size: .8rem;
+  color: var(--secondary-font);
+}
+
+/* fields */
+form .name-field,
+form .email-field,
+form .phone-field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  color: var(--general-font);
+  margin-bottom: 1.5rem;
+
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+form label {
+  margin-bottom: .3rem;
+}
+
+form input {
+  height: 2.5rem;
+
+  background: none;
+  outline: none;
+
+  border: 1px solid var(--secondary-font);
+  border-radius: 5px;
+
+  padding: .5rem;
+}
+
+/* submit */
+form .submit-btn {
+  display: block;
+
+  cursor: pointer;
+
+  margin: 3rem 0 0 auto;
+  padding: .7rem 1rem;
+
+  background-color: var(--general-font);
+  color: var(--form-card-bg);
+
+  outline: none;
+
+  border: none;
+  border-radius: 5px;
+}
+/*********************************************/
+
+/* JavaScript error messages */
+.error-msg-name,
+.error-msg-phone,
+.error-msg-email {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+}
+/*********************************************/
+
+/* JavaScript display/hide */
+.personal-info {
+  display: none;
+}

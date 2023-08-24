@@ -1,4 +1,4 @@
-/* Form validation */
+// Form validation
 // Get form and fields
 const form = document.getElementById("form") as HTMLFormElement
 
@@ -33,15 +33,20 @@ const user = {
 /******************************************************************/
 
 // Error Messages
-const errorMsgs = [
-  "Name can not contain numbers.",
-  "Name can not be less than 3 characters.",
-  "Name can not be more than 30 characters.",
-  "Please enter correct email address.",
-  "Please enter only numbers.",
-  "Phone number can not be less than 9 numbers.",
-  "Phone number can not be more than 12 numbers."
-]
+const errorMsgs = {
+  // For name field
+  numbersInName: "Name can not contain numbers.",
+  lessThan3Char: "Name can not be less than 3 characters.",
+  moreThan30Char: "Name can not be more than 30 characters.",
+
+  // For email field
+  correctEmail: "Please enter correct email address.",
+
+  // For phone field
+  onlyNumbers: "Please enter only numbers.",
+  lessThan9Num: "Phone number can not be less than 9 numbers.",
+  moreThan12Num: "Phone number can not be more than 12 numbers."
+}
 /******************************************************************/
 
 // Name input - reactive behaviour
@@ -51,9 +56,9 @@ if (formNameField) {
     const nameRegExp = nameValidation.test(nameValue)
 
     if (nameValue === "") errorName.textContent = ""
-    else if (nameRegExp === false) errorName.textContent = errorMsgs[0]
-    else if (nameValue.length <= 2) errorName.textContent = errorMsgs[1]
-    else if (nameValue.length > 30) errorName.textContent = errorMsgs[2]
+    else if (nameRegExp === false) errorName.textContent = errorMsgs.numbersInName
+    else if (nameValue.length <= 2) errorName.textContent = errorMsgs.lessThan3Char
+    else if (nameValue.length > 30) errorName.textContent = errorMsgs.moreThan30Char
     else {
       errorName.textContent = ""
       user.name = nameValue
@@ -69,7 +74,7 @@ if (formEmailField) {
     const emailRegExp = emailValidation.test(emailValue)
 
     if (emailValue === "") errorEmail.textContent = ""
-    else if (emailRegExp === false) errorEmail.textContent = errorMsgs[3]
+    else if (emailRegExp === false) errorEmail.textContent = errorMsgs.correctEmail
     else {
       errorEmail.textContent = ""
       user.email = emailValue
@@ -85,19 +90,12 @@ if (formPhoneField) {
     const phoneRegExp = phoneValidation.test(phoneValue)
 
     if (phoneValue === "") errorPhone.textContent = ""
-    else if (phoneRegExp === false) errorPhone.textContent = errorMsgs[4]
-    else if (phoneValue.length < 9) errorPhone.textContent = errorMsgs[5]
-    else if (phoneValue.length > 12) errorPhone.textContent = errorMsgs[6]
+    else if (phoneRegExp === false) errorPhone.textContent = errorMsgs.onlyNumbers
+    else if (phoneValue.length < 9) errorPhone.textContent = errorMsgs.lessThan9Num
+    else if (phoneValue.length > 12) errorPhone.textContent = errorMsgs.moreThan12Num
     else {
       errorPhone.textContent = ""
-
-      // Slice for better reading
-      const slicePhoneValue0 = phoneValue.slice(0, 3)
-      const slicePhoneValue1 = phoneValue.slice(3, 6)
-      const slicePhoneValue2 = phoneValue.slice(6, 9)
-      const slicePhoneValue3 = slicePhoneValue0 + " " + slicePhoneValue1 + " " + slicePhoneValue2
-
-      user.phone = slicePhoneValue3
+      user.phone = phoneValue
     }
   })
 }
@@ -123,17 +121,12 @@ window.addEventListener("beforeunload", (e) => {
   e.preventDefault()
   form.reset()
 })
-/******************************************************************/
-
-
-
 
 /******************************************************************/
-// Martin questions píčo!
-// skoro nikde nic netypuju, je to špatně?
-// tel. č. po odeslání odděluji mezerou na 3 části, je to blbě?
-// dělá se to takhle vůbec? (celej kód)
-// vadí že je to reaktivní? proč někdo validuje až po odeslání?
-// jak dlouhej máš penis?
-// proč script.js používá var? co je to za sračku
 /******************************************************************/
+
+// BTNS Go Back & Next Step
+
+
+
+
