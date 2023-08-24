@@ -83,7 +83,10 @@
 .yearly-bar {
   cursor: pointer;
 }
-/*********************************************/
+
+.yearly-bar {
+  color: var(--secondary-font);
+}
 
 /* btns */
 .select-your-plan .btns {
@@ -109,6 +112,7 @@
 }
 /*********************************************/
 
-/* JavaScript btns Go Back / Next Step */
-
-/*********************************************/
+/* JavaScript */
+.select-your-plan {
+  display: none;
+}

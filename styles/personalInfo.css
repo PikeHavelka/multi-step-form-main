@@ -79,9 +79,3 @@ form .submit-btn {
   right: 0;
   color: red;
 }
-/*********************************************/
-
-/* JavaScript display/hide */
-.personal-info {
-  display: none;
-}
