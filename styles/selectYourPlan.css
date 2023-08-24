@@ -89,12 +89,12 @@
 }
 
 /* btns */
-.select-your-plan .btns {
+.btns {
   display: flex;
   justify-content: space-between;
 }
 
-.select-your-plan .btns>* {
+.btns > * {
   display: block;
 
   cursor: pointer;
@@ -114,5 +114,9 @@
 
 /* JavaScript */
 .select-your-plan {
+  display: none;
+}
+
+.personal-info {
   display: none;
 }

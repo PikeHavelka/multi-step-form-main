@@ -1,0 +1,42 @@
+/* Right Side - Add-Ons */
+.pick-add-ons {
+  margin: 3rem auto;
+  width: 55%;
+}
+
+.pick-add-ons .online-service-card,
+.pick-add-ons .larger-storage-card,
+.pick-add-ons .customizable-card {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .8rem;
+  margin-bottom: .8rem;
+
+  border: 1px solid var(--border-cards);
+  border-radius: 10px;
+}
+
+.pick-add-ons .customizable-card {
+  margin-bottom: 0;
+}
+
+.pick-add-ons .customizable-price,
+.pick-add-ons .larger-storage-price,
+.pick-add-ons .online-service-price {
+  margin-left: auto;
+  padding-right: .5rem;
+
+  color: var(--border-cards);
+}
+
+.pick-add-ons h3  {
+  font-size: 1.1rem;
+  color: var(--general-font);
+}
+
+.pick-add-ons p {
+  font-size: .9rem;
+  color: var(--secondary-font);
+}
