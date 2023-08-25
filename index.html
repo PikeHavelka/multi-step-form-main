@@ -9,22 +9,21 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;800&family=Ubuntu:wght@400;500;700&display=swap"
-    rel="stylesheet">
-  <!------------>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <!---------------->
 
-  <!-- CSS -->
-  <!-- general-->
+  <!----- CSS ----->
+  <!--- general --->
   <link rel="stylesheet" href="/styles/style.css">
 
-  <!-- left side-->
+  <!-- left side -->
   <link rel="stylesheet" href="/styles/sidebar.css">
 
   <!-- right side -->
   <link rel="stylesheet" href="/styles/personalInfo.css">
   <link rel="stylesheet" href="/styles/selectYourPlan.css">
   <link rel="stylesheet" href="/styles/pickAddOns.css">
+  <link rel="stylesheet" href="/styles/finishUp.css">
   <!---------------->
 </head>
 
@@ -223,6 +222,49 @@
           <button class="submit-btn" id="btn-go-next" onClick="goNext()">Next Step</button>
         </div>
       </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="finish-up" id="step-4">
+      <div class="header">
+        <h1>Finish up</h1>
+        <p>Double-check everythink looks OK before confirming.</p>
+      </div>
+
+      <div class="rectangle-cards">
+        <div class="arcade-card">
+          <div class="text">
+            <h3>Arcade (Monthly)</h3>
+            <p>Change</p>
+          </div>
+
+          <span class="arcade-price">$9/mo</span>
+        </div>
+
+        <div class="online-larger-card">
+          <div class="text">
+            <p>Online service</p>
+            <p>Larger storage</p>
+          </div>
+
+          <div class="prices">
+            <span class="online-service-price">+$1/mo</span>
+            <span class="larger-storage-price">+$2/mo</span>
+          </div>
+        </div>
+
+        <div class="total-card">
+          <div class="text">
+            <p>Total (per mounth)</p>
+          </div>
+
+          <span class="total-price">+$12/mo</span>
+        </div>
+
+        <div class="btns">
+          <button class="submit-btn" id="btn-go-back" onClick="goBack()">Go Back</button>
+          <button class="submit-btn-confirm" id="btn-go-next" onClick="goNext()">Confirm</button>
+        </div>
     </div>
   </div>
 

@@ -1,0 +1,70 @@
+.finish-up {
+  margin: 3rem auto;
+  width: 55%;
+}
+
+.finish-up .arcade-card,
+.finish-up .online-larger-card,
+.finish-up .total-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .8rem .8rem 1.1rem .8rem;
+
+  background-color: hsl(231, 100%, 99%);
+}
+
+.finish-up .arcade-card {
+  position: relative;
+  border-top-right-radius: 13px;
+  border-top-left-radius: 13px;
+}
+
+.finish-up .arcade-card::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 90%;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.finish-up .online-larger-card {
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+
+.finish-up .total-card {
+  background-color: #FFF;
+}
+
+.finish-up .prices > * {
+  display: block;
+  padding-top: .5rem;
+}
+
+.finish-up .text p {
+  padding-top: .5rem;
+  color: var(--secondary-font);
+}
+
+.finish-up .arcade-price {
+  color: var(--general-font);
+  font-weight: bold;
+}
+
+.finish-up .total-price {
+  color: var(--border-cards);
+  font-weight: bold;
+}
+
+.finish-up .submit-btn-confirm {
+  background-color: var(--border-cards);
+  font-weight: bold;
+}

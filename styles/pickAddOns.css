@@ -2,6 +2,8 @@
 .pick-add-ons {
   margin: 3rem auto;
   width: 55%;
+
+  display: none;
 }
 
 .pick-add-ons .online-service-card,
