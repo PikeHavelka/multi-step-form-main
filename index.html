@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <!---------------->
+  <!--------------->
 
   <!----- CSS ----->
   <!--- general --->
@@ -106,7 +106,7 @@
           <div class="error-msg-phone" id="error-phone"></div>
         </div>
 
-        <button class="submit-btn" onClick="goNext()">Next Step</button>
+        <button class="next-step" onClick="goNext()">Next Step</button>
       </form>
     </div>
 
@@ -118,7 +118,10 @@
       </div>
 
       <div class="plan-cards">
-        <div class="arcade-card card">
+
+        <div class="error-message" id="error-msg-plan-cards"></div>
+
+        <div class="arcade-card card" id="arcade-plan-card" onClick="handleClickYourPlan(event)">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
             <g fill="none" fill-rule="evenodd">
               <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
@@ -131,7 +134,7 @@
           <span id="monthly-yearly-price-arcade">$9/mo</span>
         </div>
 
-        <div class="advanced-card card">
+        <div class="advanced-card card" id="advanced-plan-card" onClick="handleClickYourPlan(event)">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
             <g fill="none" fill-rule="evenodd">
               <circle cx="20" cy="20" r="20" fill="#F9818E" />
@@ -144,7 +147,7 @@
           <span id="monthly-yearly-price-advanced">$12/mo</span>
         </div>
 
-        <div class="pro-card card">
+        <div class="pro-card card" id="pro-plan-card" onClick="handleClickYourPlan(event)">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
             <g fill="none" fill-rule="evenodd">
               <circle cx="20" cy="20" r="20" fill="#483EFF" />
@@ -159,12 +162,12 @@
       </div>
 
       <div class="monthly-yearly-bar">
-        <p class="monthly-bar" id="monthly-pbar" onClick="monthly()">Monthly</p>
+        <p class="monthly-bar" id="monthly-bar" onClick="monthly()">Monthly</p>
 
         <input type="checkbox" id="checkbox" class="toggle">
         <label for="checkbox"></label>
 
-        <p class="yearly-bar" id="yearly-pbar" onClick="yearly()">Yearly</p>
+        <p class="yearly-bar" id="yearly-bar" onClick="yearly()">Yearly</p>
       </div>
 
       <div class="btns">
@@ -182,39 +185,36 @@
 
       <div class="rectangle-cards">
         <div class="online-service-card">
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox"></label>
+          <input type="checkbox" id="checkbox-online-service" onClick="handleClickCheckbox()">
 
           <div class="text">
             <h3>Online service</h3>
             <p>Access to multiplayer games</p>
           </div>
 
-          <span class="online-service-price">+$1/mo</span>
+          <span class="online-service-price" id="online-service-price-yearly">+$1/mo</span>
         </div>
 
         <div class="larger-storage-card">
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox"></label>
+          <input type="checkbox" id="checkbox-larger-storage" onClick="handleClickCheckbox()">
 
           <div class="text">
             <h3>Larger storage</h3>
             <p>Extra 1TB of cloud save</p>
           </div>
 
-          <span class="larger-storage-price">+$2/mo</span>
+          <span class="larger-storage-price" id="larger-storage-price-yearly">+$2/mo</span>
         </div>
 
         <div class="customizable-card">
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox"></label>
+          <input type="checkbox" id="checkbox-customizable" onClick="handleClickCheckbox()">
 
           <div class="text">
             <h3>Customizable Profil</h3>
             <p>Custom theme on your profile</p>
           </div>
 
-          <span class="customizable-price">+$2/mo</span>
+          <span class="customizable-price" id="customizable-price-yearly">+$2/mo</span>
         </div>
 
         <div class="btns">
@@ -232,24 +232,26 @@
       </div>
 
       <div class="rectangle-cards">
-        <div class="arcade-card">
+        <div class="finish-card">
           <div class="text">
-            <h3>Arcade (Monthly)</h3>
+            <h3 id="name-yearly-monthly"></h3>
             <p>Change</p>
           </div>
 
-          <span class="arcade-price">$9/mo</span>
+          <span class="finish-price" id="total-price"></span>
         </div>
 
-        <div class="online-larger-card">
+        <div class="online-larger-customizable-card">
           <div class="text">
-            <p>Online service</p>
-            <p>Larger storage</p>
+            <p id="arcade-card-selected"></p>
+            <p id="advanced-card-selected"></p>
+            <p id="pro-card-selected"></p>
           </div>
 
           <div class="prices">
-            <span class="online-service-price">+$1/mo</span>
-            <span class="larger-storage-price">+$2/mo</span>
+            <span class="online-service-price"></span>
+            <span class="larger-storage-price"></span>
+            <span class="customizable-price"></span>
           </div>
         </div>
 
@@ -258,7 +260,7 @@
             <p>Total (per mounth)</p>
           </div>
 
-          <span class="total-price">+$12/mo</span>
+          <span class="total-price"></span>
         </div>
 
         <div class="btns">
@@ -269,6 +271,9 @@
   </div>
 
   <script src="/scripts/script.js"></script>
+  <script src="/scripts/personalInfoForm.js"></script>
+  <script src="/scripts/selectYourPlanCards.js"></script>
+  <script src="/scripts/pickAddOns.js"></script>
 </body>
 
 </html>

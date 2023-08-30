@@ -1,10 +1,12 @@
 .finish-up {
   margin: 3rem auto;
   width: 55%;
+
+  display: none;
 }
 
-.finish-up .arcade-card,
-.finish-up .online-larger-card,
+.finish-up .finish-card,
+.finish-up .online-larger-customizable-card,
 .finish-up .total-card {
   display: flex;
   justify-content: space-between;
@@ -16,13 +18,13 @@
   background-color: hsl(231, 100%, 99%);
 }
 
-.finish-up .arcade-card {
+.finish-up .finish-card {
   position: relative;
   border-top-right-radius: 13px;
   border-top-left-radius: 13px;
 }
 
-.finish-up .arcade-card::after {
+.finish-up .finish-card::after {
   content: "";
 
   position: absolute;
@@ -35,7 +37,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.finish-up .online-larger-card {
+.finish-up .online-larger-customizable-card {
   border-bottom-right-radius: 13px;
   border-bottom-left-radius: 13px;
 }
@@ -54,7 +56,7 @@
   color: var(--secondary-font);
 }
 
-.finish-up .arcade-price {
+.finish-up .finish-price {
   color: var(--general-font);
   font-weight: bold;
 }
@@ -68,3 +70,15 @@
   background-color: var(--border-cards);
   font-weight: bold;
 }
+
+/*********************************************/
+
+/* JavaScript summary */
+
+
+
+/* Object { arcadeCardSelect: false, advancedCardSelect: true, proCardSelect: false }
+ 
+Object { onlineService: true, largerStorage: true, customizableProfil: false }
+ false true 
+Object { name: "Pavel", email: "prfl@sezb.cc", phone: "2131111312" } */

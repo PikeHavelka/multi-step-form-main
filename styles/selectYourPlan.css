@@ -2,20 +2,35 @@
 .select-your-plan {
   margin: 3rem auto;
   width: 55%;
+
+  display: none;
 }
 
 /* cards */
+.select-your-plan .plan-cards {
+  position: relative;
+}
+
 .select-your-plan .plan-cards {
   display: flex;
   gap: 1rem;
 }
 
+.select-your-plan .card > * {
+  pointer-events: none;
+}
+
 .select-your-plan .card {
-  border: 1px solid var(--border-cards);
+  border: 1px solid var(--secondary-font);
   border-radius: 10px;
+  cursor: pointer;
 
   width: 100%;
   padding: .8rem;
+}
+
+.select-your-plan .card:hover {
+  border: 1px solid var(--border-cards);
 }
 
 .select-your-plan .card svg {
@@ -112,11 +127,10 @@
 }
 /*********************************************/
 
-/* JavaScript */
-.select-your-plan {
-  display: none;
-}
-
-.personal-info {
-  display: none;
+/* JavaScript error messages */
+.select-your-plan .plan-cards .error-message {
+  position: absolute;
+  color: red;
+  top: -25px;
+  left: 25%;
 }

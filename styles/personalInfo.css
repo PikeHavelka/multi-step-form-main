@@ -52,7 +52,7 @@ form input {
 }
 
 /* submit */
-form .submit-btn {
+form .next-step {
   display: block;
 
   cursor: pointer;
