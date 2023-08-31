@@ -296,22 +296,28 @@ const htmlElements = selectPlan && personalInfo && stepCyrcle1 && stepCyrcle2 &&
 const goBack = () => {
     if (htmlElements) {
         if (selectPlan.style.display === "block") {
+            // Hide current step, show back step
             selectPlan.style.display = "none";
             personalInfo.style.display = "block";
+            // Update step indicators
             stepCyrcle1.classList.add("active");
             stepCyrcle2.classList.remove("active");
             isFirstClick = true;
         }
         else if (pickAddOns.style.display === "block") {
+            // Hide current step, show back step
             selectPlan.style.display = "block";
             pickAddOns.style.display = "none";
+            // Update step indicators
             stepCyrcle2.classList.add("active");
             stepCyrcle3.classList.remove("active");
             isSecondClick = true;
         }
         else if (finishUp.style.display === "block" && isSecondClick === false) {
+            // Hide current step, show back step
             pickAddOns.style.display = "block";
             finishUp.style.display = "none";
+            // Update step indicators
             stepCyrcle3.classList.add("active");
             stepCyrcle4.classList.remove("active");
         }
@@ -328,7 +334,6 @@ const goNext = () => {
             stepCyrcle2.classList.add("active");
             stepCyrcle1.classList.remove("active");
             isFirstClick = false;
-            console.log("2");
         } // Condition for SECOND STEP (only message)
         else if (!isFirstClick && errorMessagePlanCards && !selectYourPlan.arcadePlanSelected && !selectYourPlan.advancedPlanSelected && !selectYourPlan.proPlanSelected) {
             // Show error message
@@ -342,7 +347,6 @@ const goNext = () => {
             stepCyrcle3.classList.add("active");
             stepCyrcle2.classList.remove("active");
             isSecondClick = false;
-            console.log("3");
         } // Condition for THIRD STEP (hide 3. step and show 4. step)
         else if (isSecondClick === false) {
             // Hide curren step, show next step
@@ -352,31 +356,6 @@ const goNext = () => {
             stepCyrcle4.classList.add("active");
             stepCyrcle3.classList.remove("active");
             console.log(user, "\n", selectPlan, "\n", yourPlan, "\n", pickAddOnsInput);
-            console.log("4");
         }
     }
 };
-/******************************************************************/
-/****************************TEST**********************************/
-/******************************************************************/
-// const nameMonthlyYearly = document.getElementById("name-yearly-monthly") as HTMLDivElement | null
-// const totalPrice = document.getElementById("total-price") as HTMLSpanElement | null
-// const arcadeCardSelected = document.getElementById("arcade-card-selected") as HTMLParagraphElement | null
-// const advancedCardSelected = document.getElementById("advanced-card-selected") as HTMLParagraphElement | null
-// const proCardSelected = document.getElementById("pro-card-selected") as HTMLParagraphElement | null
-// const onlineServicePrice = document.getElementById("online-service-price") as HTMLSpanElement | null
-// const largerStoragePrice = document.getElementById("larger-storage-price") as HTMLSpanElement | null
-// const customizablePrice = document.getElementById("customizable-price") as HTMLSpanElement | null
-// nameMonthlyYearly && totalPrice && arcadeCardSelected && advancedCardSelected && proCardSelected && onlineServicePrice && largerStoragePrice && customizablePrice
-// const summaryAndPrices = (card: { arcadeCardSelect: boolean, advancedCardSelect: boolean, proCardSelect: boolean }, plan: { monthly: boolean; yearly: boolean }, pickAdd_ons: { onlineService: boolean, largerStorage: boolean, customizableProfil: boolean }) => {
-//   if (onlineServicePrice && largerStoragePrice && customizablePrice) {
-//     if (plan.monthly) {
-//       console.log("monthly")
-//       pickAdd_ons.onlineService ? onlineServicePrice.textContent = "true" : onlineServicePrice.textContent = "false"
-//       pickAdd_ons.largerStorage ? largerStoragePrice.textContent = "true" : largerStoragePrice.textContent = "false"
-//       pickAdd_ons.customizableProfil ? customizablePrice.textContent = "true" : customizablePrice.textContent = "false"
-//     } else if (plan.yearly) {
-//       console.log("yearly")
-//     }
-//   }
-// }
