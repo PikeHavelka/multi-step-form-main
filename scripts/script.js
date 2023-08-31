@@ -292,7 +292,7 @@ let isFirstClick = true;
 let isSecondClick = true;
 /*******************************************************************/
 // All selected HTML Elements on one for if statement
-const htmlElements = selectPlan && personalInfo && stepCyrcle1 && stepCyrcle2 && stepCyrcle3 && stepCyrcle4 && pickAddOns && finishUp;
+const htmlElements = selectPlan && personalInfo && stepCyrcle1 && stepCyrcle2 && stepCyrcle3 && stepCyrcle4 && pickAddOns && finishUp && errorMessagePlanCards;
 const goBack = () => {
     if (htmlElements) {
         if (selectPlan.style.display === "block") {
@@ -321,28 +321,38 @@ const goNext = () => {
     if (htmlElements) {
         // Condition for FIRST STEP (hide 1. step and show 2. step)
         if (isFirstClick && user.name != "" && user.email != "" && user.phone != "") {
+            // Hide current step, show next step
             selectPlan.style.display = "block";
             personalInfo.style.display = "none";
+            // Update step indicators
             stepCyrcle2.classList.add("active");
             stepCyrcle1.classList.remove("active");
             isFirstClick = false;
+            console.log("2");
         } // Condition for SECOND STEP (only message)
-        else if (isFirstClick === false && errorMessagePlanCards && selectYourPlan.arcadePlanSelected === false && selectYourPlan.advancedPlanSelected === false && selectYourPlan.proPlanSelected === false) {
+        else if (!isFirstClick && errorMessagePlanCards && !selectYourPlan.arcadePlanSelected && !selectYourPlan.advancedPlanSelected && !selectYourPlan.proPlanSelected) {
+            // Show error message
             errorMessagePlanCards.textContent = "Please select one of the plans";
         } // Condition for SECOND STEP (hide 2. step and show 3. step)
-        else if (isFirstClick === false && errorMessagePlanCards || selectYourPlan.arcadePlanSelected === true || selectYourPlan.advancedPlanSelected === true || selectYourPlan.proPlanSelected === true) {
+        else if (!isFirstClick && isSecondClick === true && (selectYourPlan.arcadePlanSelected === true || selectYourPlan.advancedPlanSelected === true || selectYourPlan.proPlanSelected === true)) {
+            // Hide current step, show next step
             selectPlan.style.display = "none";
             pickAddOns.style.display = "block";
+            // Update step indicators
             stepCyrcle3.classList.add("active");
             stepCyrcle2.classList.remove("active");
             isSecondClick = false;
+            console.log("3");
         } // Condition for THIRD STEP (hide 3. step and show 4. step)
         else if (isSecondClick === false) {
+            // Hide curren step, show next step
             pickAddOns.style.display = "none";
             finishUp.style.display = "block";
+            // Update step indicators
             stepCyrcle4.classList.add("active");
             stepCyrcle3.classList.remove("active");
             console.log(user, "\n", selectPlan, "\n", yourPlan, "\n", pickAddOnsInput);
+            console.log("4");
         }
     }
 };
