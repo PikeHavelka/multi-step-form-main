@@ -1,0 +1,52 @@
+/* btns */
+.btns {
+  position: relative;
+}
+
+.next-step,
+.back-step,
+.confirm-step {
+  display: block;
+  position: absolute;
+
+  top: 3rem;
+  right: 0;
+
+  cursor: pointer;
+
+  padding: .7rem 1rem;
+
+  background-color: var(--general-font);
+  color: var(--form-card-bg);
+
+  outline: none;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.back-step {
+  left: 0;
+}
+
+.personal-info .next-step {
+  top: .5rem;
+}
+
+.pick-add-ons .next-step {
+  top: 2.5rem;
+}
+
+.select-your-plan .back-step {
+  top: 3rem;
+}
+
+.pick-add-ons .next-step,
+.pick-add-ons .back-step {
+  top: 2.5rem;
+}
+
+.confirm-step,
+.back-step {
+  top: .2rem;
+}

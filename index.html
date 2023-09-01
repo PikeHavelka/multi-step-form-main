@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/styles/selectYourPlan.css">
   <link rel="stylesheet" href="/styles/pickAddOns.css">
   <link rel="stylesheet" href="/styles/finishUp.css">
+  <link rel="stylesheet" href="/styles/btns.css">
   <!---------------->
 </head>
 
@@ -107,7 +108,9 @@
           <div class="error-msg-phone" id="error-phone"></div>
         </div>
 
-        <button class="next-step" onClick="goNext()">Next Step</button>
+        <div class="btns">
+          <button class="next-step" onClick="goNext()">Next Step</button>
+        </div>
       </form>
     </div>
     <!--------------------------->
@@ -173,8 +176,8 @@
       </div>
 
       <div class="btns">
-        <button class="submit-btn" id="btn-go-back" onClick="goBack()">Go Back</button>
-        <button class="submit-btn" id="btn-go-next" onClick="goNext()">Next Step</button>
+        <button class="back-step" id="btn-go-back" onClick="goBack()">Go Back</button>
+        <button class="next-step" id="btn-go-next" onClick="goNext()">Next Step</button>
       </div>
     </div>
     <!--------------------------->
@@ -221,8 +224,8 @@
         </div>
 
         <div class="btns">
-          <button class="submit-btn" id="btn-go-back" onClick="goBack()">Go Back</button>
-          <button class="submit-btn" id="btn-go-next" onClick="goNext()">Next Step</button>
+          <button class="back-step" id="btn-go-back" onClick="goBack()">Go Back</button>
+          <button class="next-step" id="btn-go-next" onClick="goNext()">Next Step</button>
         </div>
       </div>
     </div>
@@ -247,15 +250,15 @@
 
         <div class="online-larger-customizable-card">
           <div class="text">
-            <p id="arcade-card-selected"></p>
-            <p id="advanced-card-selected"></p>
-            <p id="pro-card-selected"></p>
+            <p id="online-service"></p>
+            <p id="larger-storage"></p>
+            <p id="customizable"></p>
           </div>
 
           <div class="prices">
-            <span class="online-service-price"></span>
-            <span class="larger-storage-price"></span>
-            <span class="customizable-price"></span>
+            <span id="online-service-price"></span>
+            <span id="larger-storage-price"></span>
+            <span id="customizable-price"></span>
           </div>
         </div>
 
@@ -268,8 +271,8 @@
         </div>
 
         <div class="btns">
-          <button class="submit-btn" id="btn-go-back" onClick="goBack()">Go Back</button>
-          <button class="submit-btn-confirm" id="btn-go-next" onClick="goNext()">Confirm</button>
+          <button class="back-step" id="btn-go-back" onClick="goBack()">Go Back</button>
+          <button class="confirm-step" id="btn-go-next" onClick="goNext()">Confirm</button>
         </div>
     </div>
   </div>

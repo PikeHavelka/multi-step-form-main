@@ -4,6 +4,7 @@
   width: 55%;
 
   display: none;
+  position: relative;
 }
 
 .pick-add-ons .online-service-card,

@@ -2,6 +2,8 @@
 .personal-info {
   margin: 3rem auto;
   width: 55%;
+
+  position: relative;
 }
 
 /* header */
@@ -49,24 +51,6 @@ form input {
   border-radius: 5px;
 
   padding: .5rem;
-}
-
-/* submit */
-form .next-step {
-  display: block;
-
-  cursor: pointer;
-
-  margin: 3rem 0 0 auto;
-  padding: .7rem 1rem;
-
-  background-color: var(--general-font);
-  color: var(--form-card-bg);
-
-  outline: none;
-
-  border: none;
-  border-radius: 5px;
 }
 /*********************************************/
 

@@ -418,7 +418,52 @@ const goNext = () => {
       stepCyrcle4.classList.add("active")
       stepCyrcle3.classList.remove("active")
 
-      console.log(user, "\n", selectPlan, "\n", yourPlan, "\n", pickAddOnsInput)
+      console.log(user, "\n", selectYourPlan, "\n", yourPlan, "\n", pickAddOnsInput)
+
+      if (selectYourPlan.arcadePlanSelected) finalSummary("Arcade",)
+      else if (selectYourPlan.advancedPlanSelected) finalSummary("Advanced",)
+      else if (selectYourPlan.proPlanSelected) finalSummary("Pro",)
     }
+  }
+}
+
+
+/******************************************************************/
+/********************Finish Up / SUMMARY***************************/
+/******************************************************************/
+
+
+
+const finalSummary = (plan: string) => {
+  const finalPlanName = document.getElementById("name-yearly-monthly") as HTMLHeadingElement || null
+  const finalPlanPrice = document.getElementById("total-price") as HTMLSpanElement || null
+  /*******************************************************************/
+
+  // Get final pick add-ons
+  const finalOnlineService = document.getElementById("online-service") as HTMLSpanElement || null
+  const finalLargerStorage = document.getElementById("larger-storage") as HTMLSpanElement || null
+  const finalCustomizable = document.getElementById("customizable") as HTMLSpanElement || null
+  /*******************************************************************/
+
+  // Get final prices
+  const finalOnlineServicePrice = document.getElementById("online-service-price") as HTMLSpanElement || null
+  const finalLargerStoragePrice = document.getElementById("larger-storage-price") as HTMLSpanElement || null
+  const finalCustomizablePrice = document.getElementById("customizable-price") as HTMLSpanElement || null
+  /*******************************************************************/
+
+  if (finalPlanName && finalPlanPrice && finalOnlineService && finalLargerStorage && finalCustomizable && finalOnlineServicePrice && finalLargerStoragePrice && finalCustomizablePrice) {
+    // Show final plan
+    finalPlanName.textContent = `${plan} ${yourPlan.monthly ? "(Monthly)" : "(Yearly)"}`
+    finalPlanPrice.textContent = `/${yourPlan.monthly ? "mo" : "yr"}`
+
+    // Show final pick add-ons
+    finalOnlineService.textContent = `${pickAddOnsInput.onlineService ? "Online Service" : ""}`
+    finalLargerStorage.textContent = `${pickAddOnsInput.largerStorage ? "Larger Storage" : ""}`
+    finalCustomizable.textContent = `${pickAddOnsInput.customizableProfil ? "Customizable" : ""}`
+
+    // Show final prices
+    finalOnlineServicePrice.textContent = `${yourPlan.monthly ? "+$1/mo" : "+$10/yr"}`
+    finalLargerStoragePrice.textContent = `${yourPlan.monthly ? "+$2/mo" : "+$20/yr"}`
+    finalCustomizablePrice.textContent = `${yourPlan.monthly ? "+$2/mo" : "+$20/yr"}`
   }
 }

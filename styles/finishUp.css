@@ -3,6 +3,7 @@
   width: 55%;
 
   display: none;
+  position: relative;
 }
 
 .finish-up .finish-card,
@@ -48,7 +49,12 @@
 
 .finish-up .prices > * {
   display: block;
-  padding-top: .5rem;
+  padding-top: 1rem;
+  color: rgba(0, 0, 0, 0.473);
+}
+
+.finish-up .prices span:first-child {
+  padding-top: 0rem;
 }
 
 .finish-up .text p {
@@ -70,15 +76,3 @@
   background-color: var(--border-cards);
   font-weight: bold;
 }
-
-/*********************************************/
-
-/* JavaScript summary */
-
-
-
-/* Object { arcadeCardSelect: false, advancedCardSelect: true, proCardSelect: false }
- 
-Object { onlineService: true, largerStorage: true, customizableProfil: false }
- false true 
-Object { name: "Pavel", email: "prfl@sezb.cc", phone: "2131111312" } */

@@ -4,6 +4,7 @@
   width: 55%;
 
   display: none;
+  position: relative;
 }
 
 /* cards */
@@ -101,29 +102,6 @@
 
 .yearly-bar {
   color: var(--secondary-font);
-}
-
-/* btns */
-.btns {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btns > * {
-  display: block;
-
-  cursor: pointer;
-
-  padding: .7rem 1rem;
-  margin-top: 3rem;
-
-  background-color: var(--general-font);
-  color: var(--form-card-bg);
-
-  outline: none;
-
-  border: none;
-  border-radius: 5px;
 }
 /*********************************************/
 
