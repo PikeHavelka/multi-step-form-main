@@ -1,0 +1,4 @@
+To Do List
+1. Dokončit součet v sekci summary
+2. Dodělat verzi pro mobily a ostatní zařízení.
+3. Vytvořit kompatibilitu pro strarší prohlížeče.

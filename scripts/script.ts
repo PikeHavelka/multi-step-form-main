@@ -106,8 +106,11 @@ if (form && errorName && errorEmail && errorPhone) {
     }
   })
 }
+
+
 /******************************************************************/
-// Reset form when reload the page
+/**************Reset form when reload the page*********************/
+/******************************************************************/
 if (form) {
   window.addEventListener("beforeunload", (e) => {
     e.preventDefault()
@@ -170,8 +173,11 @@ const errorMessagePlanCards = document.getElementById("error-msg-plan-cards") as
 const selectYourPlan = {
   arcadePlanSelected: false,
   advancedPlanSelected: false,
-  proPlanSelected: false
+  proPlanSelected: false,
+  currentPrice: 0
 }
+
+let selectYourPlanRobarth: "arcade" | "advanced" | "pro" = "pro"
 /******************************************************************/
 
 const handleClickYourPlan = (event: MouseEvent) => {
@@ -190,6 +196,8 @@ const handleClickYourPlan = (event: MouseEvent) => {
       selectYourPlan.arcadePlanSelected = true
       selectYourPlan.advancedPlanSelected = false
       selectYourPlan.proPlanSelected = false
+      selectYourPlan.currentPrice = 9
+
     }
     else if (event.target.id === "advanced-plan-card") {
 
@@ -205,6 +213,7 @@ const handleClickYourPlan = (event: MouseEvent) => {
       selectYourPlan.arcadePlanSelected = false
       selectYourPlan.advancedPlanSelected = true
       selectYourPlan.proPlanSelected = false
+      selectYourPlan.currentPrice = 12
     }
     else if (event.target.id === "pro-plan-card") {
 
@@ -220,6 +229,7 @@ const handleClickYourPlan = (event: MouseEvent) => {
       selectYourPlan.arcadePlanSelected = false
       selectYourPlan.advancedPlanSelected = false
       selectYourPlan.proPlanSelected = true
+      selectYourPlan.currentPrice = 15
     }
   }
 }
@@ -256,6 +266,7 @@ const yourPlan = {
   monthly: false,
   yearly: false
 }
+
 /*******************************************************************/
 
 // Set all elements into one
@@ -432,11 +443,10 @@ const goNext = () => {
 /********************Finish Up / SUMMARY***************************/
 /******************************************************************/
 
-
-
 const finalSummary = (plan: string) => {
   const finalPlanName = document.getElementById("name-yearly-monthly") as HTMLHeadingElement || null
   const finalPlanPrice = document.getElementById("total-price") as HTMLSpanElement || null
+  const finalTotalPrice = document.getElementById("final-total-price") as HTMLSpanElement || null
   /*******************************************************************/
 
   // Get final pick add-ons
@@ -452,9 +462,6 @@ const finalSummary = (plan: string) => {
   /*******************************************************************/
 
   if (finalPlanName && finalPlanPrice && finalOnlineService && finalLargerStorage && finalCustomizable && finalOnlineServicePrice && finalLargerStoragePrice && finalCustomizablePrice) {
-    // Show final plan
-    finalPlanName.textContent = `${plan} ${yourPlan.monthly ? "(Monthly)" : "(Yearly)"}`
-    finalPlanPrice.textContent = `/${yourPlan.monthly ? "mo" : "yr"}`
 
     // Show final pick add-ons
     finalOnlineService.textContent = `${pickAddOnsInput.onlineService ? "Online Service" : ""}`
@@ -462,8 +469,25 @@ const finalSummary = (plan: string) => {
     finalCustomizable.textContent = `${pickAddOnsInput.customizableProfil ? "Customizable" : ""}`
 
     // Show final prices
-    finalOnlineServicePrice.textContent = `${yourPlan.monthly ? "+$1/mo" : "+$10/yr"}`
-    finalLargerStoragePrice.textContent = `${yourPlan.monthly ? "+$2/mo" : "+$20/yr"}`
-    finalCustomizablePrice.textContent = `${yourPlan.monthly ? "+$2/mo" : "+$20/yr"}`
+    if (yourPlan.monthly) {
+
+      // Show final plan
+      finalPlanName.textContent = `${plan} (monthly)`
+      finalPlanPrice.textContent = `${selectYourPlan.currentPrice}/mo`
+
+      finalOnlineServicePrice.textContent = `${pickAddOnsInput.onlineService ? "+$1/mo" : ""}`
+      finalLargerStoragePrice.textContent = `${pickAddOnsInput.largerStorage ? "+$2/mo" : ""}`
+      finalCustomizablePrice.textContent = `${pickAddOnsInput.customizableProfil ? "+$2/mo" : ""}`
+
+    } else if (yourPlan.yearly) {
+
+      // Show final plan
+      finalPlanName.textContent = `${plan} (Yearly)`
+      finalPlanPrice.textContent = `${selectYourPlan.currentPrice * 10}/yr`
+
+      finalOnlineServicePrice.textContent = `${pickAddOnsInput.onlineService ? "+$10/yr" : ""}`
+      finalLargerStoragePrice.textContent = `${pickAddOnsInput.largerStorage ? "+$20/yr" : ""}`
+      finalCustomizablePrice.textContent = `${pickAddOnsInput.customizableProfil ? "+$20/yr" : ""}`
+    }
   }
 }
